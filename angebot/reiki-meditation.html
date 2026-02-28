@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reiki &amp; Meditation — Jensen Healing Concept</title>
+  <meta name="description" content="Reiki &amp; Meditation bei Jensen Healing Concept: Traditionelle Entspannungsmethoden für innere Ruhe, Balance und ein gestärktes Wohlbefinden im Berner Oberland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* =============================================
+       SUBPAGE — SHARED STYLES
+       ============================================= */
+
+    /* Hero */
+    .subpage-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      background-color: var(--charcoal, #1A1714);
+      overflow: hidden;
+      padding: 120px 24px 80px;
+    }
+
+    .subpage-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 70% at 80% 40%, rgba(155, 35, 53, 0.18) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 50% at 15% 70%, rgba(196, 149, 106, 0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .subpage-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .subpage-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .subpage-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(249, 246, 241, 0.45);
+      text-decoration: none;
+      margin-bottom: 32px;
+      transition: color 0.25s ease;
+    }
+
+    .subpage-hero__back:hover {
+      color: rgba(249, 246, 241, 0.8);
+    }
+
+    .subpage-hero__back svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .subpage-hero__title {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(2.8rem, 6vw, 4.8rem);
+      font-weight: 300;
+      line-height: 1.08;
+      color: var(--cream, #F9F6F1);
+      margin: 0 0 24px;
+      letter-spacing: -0.01em;
+    }
+
+    .subpage-hero__lead {
+      font-family: 'Outfit', sans-serif;
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(249, 246, 241, 0.7);
+      max-width: 580px;
+      margin: 0 auto;
+    }
+
+    /* Section tag (reused from main site pattern) */
+    .section-tag {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber, #C4956A);
+      border: 1px solid rgba(196, 149, 106, 0.35);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 20px;
+    }
+
+    /* Sections */
+    .subpage-section {
+      padding: 96px 24px;
+      background-color: var(--cream, #F9F6F1);
+    }
+
+    .subpage-section--alt {
+      background-color: var(--cream-mid, #F0E8E2);
+    }
+
+    .subpage-section__inner {
+      max-width: 840px;
+      margin: 0 auto;
+    }
+
+    .subpage-section__inner--wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .subpage-section__tag {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--amber, #C4956A);
+      border: 1px solid rgba(196, 149, 106, 0.35);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 18px;
+    }
+
+    .subpage-section__heading {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      line-height: 1.15;
+      color: var(--charcoal, #1A1714);
+      margin: 0 0 20px;
+    }
+
+    .subpage-section__heading em {
+      font-style: italic;
+      color: var(--red, #9B2335);
+    }
+
+    .subpage-section__text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(26, 23, 20, 0.75);
+      margin: 0 0 20px;
+    }
+
+    .subpage-section__text:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Image block */
+    .subpage-image {
+      width: 100%;
+      aspect-ratio: 16 / 7;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+
+    .subpage-image-wrap {
+      overflow: hidden;
+      border-radius: 4px;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Features grid */
+    .subpage-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    @media (max-width: 900px) {
+      .subpage-features {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 560px) {
+      .subpage-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
+
+    .subpage-feature {
+      background: #fff;
+      border: 1px solid rgba(196, 149, 106, 0.18);
+      border-radius: 6px;
+      padding: 32px 28px;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+
+    .subpage-section--alt .subpage-feature {
+      background: var(--cream, #F9F6F1);
+    }
+
+    .subpage-feature:hover {
+      box-shadow: 0 8px 32px rgba(26, 23, 20, 0.08);
+      transform: translateY(-3px);
+    }
+
+    .subpage-feature__icon {
+      width: 44px;
+      height: 44px;
+      margin-bottom: 18px;
+      color: var(--red, #9B2335);
+    }
+
+    .subpage-feature__title {
+      font-family: 'Cormorant', serif;
+      font-size: 1.35rem;
+      font-weight: 500;
+      color: var(--charcoal, #1A1714);
+      margin: 0 0 10px;
+      line-height: 1.2;
+    }
+
+    .subpage-feature__text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(26, 23, 20, 0.65);
+      margin: 0;
+    }
+
+    /* Session steps */
+    .subpage-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 40px;
+    }
+
+    .subpage-step {
+      display: flex;
+      gap: 28px;
+      position: relative;
+      padding-bottom: 36px;
+    }
+
+    .subpage-step:last-child {
+      padding-bottom: 0;
+    }
+
+    .subpage-step__left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .subpage-step__num {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1.5px solid rgba(155, 35, 53, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cormorant', serif;
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--red, #9B2335);
+      flex-shrink: 0;
+      background: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subpage-step__line {
+      width: 1px;
+      flex: 1;
+      background: linear-gradient(to bottom, rgba(155, 35, 53, 0.25), rgba(155, 35, 53, 0.05));
+      margin-top: 6px;
+    }
+
+    .subpage-step:last-child .subpage-step__line {
+      display: none;
+    }
+
+    .subpage-step__body {
+      padding-top: 8px;
+    }
+
+    .subpage-step__title {
+      font-family: 'Cormorant', serif;
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--charcoal, #1A1714);
+      margin: 0 0 8px;
+    }
+
+    .subpage-step__text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: rgba(26, 23, 20, 0.68);
+      margin: 0;
+    }
+
+    /* CTA section */
+    .subpage-cta {
+      background-color: var(--charcoal, #1A1714);
+      padding: 96px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subpage-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 65% at 50% 50%, rgba(155, 35, 53, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .subpage-cta__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .subpage-cta__tag {
+      display: inline-block;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(196, 149, 106, 0.8);
+      border: 1px solid rgba(196, 149, 106, 0.25);
+      border-radius: 100px;
+      padding: 5px 14px;
+      margin-bottom: 24px;
+    }
+
+    .subpage-cta__heading {
+      font-family: 'Cormorant', serif;
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.12;
+      color: var(--cream, #F9F6F1);
+      margin: 0 0 16px;
+    }
+
+    .subpage-cta__text {
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(249, 246, 241, 0.55);
+      margin: 0 0 40px;
+    }
+
+    /* Animation utility */
+    .anim-fade {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+
+    .anim-fade.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .anim-fade--delay-1 { transition-delay: 0.1s; }
+    .anim-fade--delay-2 { transition-delay: 0.2s; }
+    .anim-fade--delay-3 { transition-delay: 0.3s; }
+    .anim-fade--delay-4 { transition-delay: 0.4s; }
+    .anim-fade--delay-5 { transition-delay: 0.5s; }
+    .anim-fade--delay-6 { transition-delay: 0.6s; }
+
+    /* Section layout helper */
+    .subpage-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .subpage-two-col {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .subpage-hero {
+        padding: 100px 20px 64px;
+        min-height: 44vh;
+      }
+
+      .subpage-section {
+        padding: 64px 20px;
+      }
+
+      .subpage-cta {
+        padding: 72px 20px;
+      }
+
+      .subpage-step {
+        gap: 20px;
+      }
+
+      .subpage-feature {
+        padding: 24px 22px;
+      }
+    }
+
+    /* Duration badge */
+    .subpage-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(155, 35, 53, 0.08);
+      border: 1px solid rgba(155, 35, 53, 0.2);
+      border-radius: 100px;
+      padding: 8px 18px;
+      font-family: 'Outfit', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 400;
+      color: var(--red, #9B2335);
+      margin-top: 32px;
+    }
+
+    .subpage-badge svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+  </style>
+  <script src="../password.js"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-top">Jensen</span>
+        <span class="nav__logo-bottom">Healing Concept</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#rotlicht" class="nav__link">Rotlicht</a>
+        <a href="../index.html#vns" class="nav__link">VNS</a>
+        <a href="../index.html#philosophie" class="nav__link">Philosophie</a>
+        <a href="../index.html#angebot" class="nav__link">Angebot</a>
+        <a href="../index.html#kontakt" class="nav__link">Kontakt</a>
+      </div>
+      <a href="../index.html#kontakt" class="nav__cta">Termin anfragen</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <a href="../index.html#rotlicht" class="mobile-menu__link">Rotlicht</a>
+      <a href="../index.html#vns" class="mobile-menu__link">VNS</a>
+      <a href="../index.html#philosophie" class="mobile-menu__link">Philosophie</a>
+      <a href="../index.html#angebot" class="mobile-menu__link">Angebot</a>
+      <a href="../index.html#kontakt" class="mobile-menu__link">Kontakt</a>
+      <a href="../index.html#kontakt" class="btn btn--primary mobile-menu__cta">Termin anfragen</a>
+    </div>
+  </div>
+
+  <!-- =============================================
+       HERO
+       ============================================= -->
+  <section class="subpage-hero">
+    <div class="subpage-hero__inner">
+      <a href="../index.html#angebot" class="subpage-hero__back">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3L5 8l5 5"/>
+        </svg>
+        Zurück zum Angebot
+      </a>
+      <div class="section-tag anim-fade">Angebot</div>
+      <h1 class="subpage-hero__title anim-fade anim-fade--delay-1">Reiki &amp; Meditation</h1>
+      <p class="subpage-hero__lead anim-fade anim-fade--delay-2">
+        Traditionelle Entspannungsmethoden für innere Ruhe, Balance und ein gestärktes Wohlbefinden.
+      </p>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 1 — WAS IST REIKI?
+       ============================================= -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="subpage-two-col">
+        <div class="anim-fade">
+          <span class="subpage-section__tag">Hintergrund</span>
+          <h2 class="subpage-section__heading">Was ist <em>Reiki</em>?</h2>
+          <p class="subpage-section__text">
+            Das Wort Reiki entstammt dem Japanischen und setzt sich aus zwei Begriffen zusammen:
+            <strong>Rei</strong> steht für das Universelle, das Allumfassende — <strong>Ki</strong>
+            bezeichnet die Lebensenergie, die in und um uns fließt. Zusammen beschreiben sie das
+            Konzept einer universellen Lebenskraft, die seit Jahrtausenden in ostasiatischen
+            Kulturen bekannt ist.
+          </p>
+          <p class="subpage-section__text">
+            Mikao Usui entdeckte und systematisierte diese Methode im Jahr 1922 in Japan. Seither
+            hat Reiki seinen Weg um die Welt gefunden und wird heute von Menschen auf allen
+            Kontinenten als sanfte Methode für tiefe Entspannung und inneres Gleichgewicht
+            geschätzt.
+          </p>
+          <p class="subpage-section__text">
+            Durch behutsame Handpositionen wird universelle Energie gezielt geleitet, um Ruhe,
+            Balance und ein vertieftes Wohlbefinden zu fördern. In Verbindung mit ausgewählten
+            Meditationstechniken entsteht eine ganzheitliche Erfahrung, die Körper, Geist und
+            Seele gleichermassen anspricht.
+          </p>
+        </div>
+        <div class="anim-fade anim-fade--delay-2">
+          <div style="
+            background: linear-gradient(135deg, rgba(155,35,53,0.06) 0%, rgba(196,149,106,0.08) 100%);
+            border: 1px solid rgba(196,149,106,0.2);
+            border-radius: 8px;
+            padding: 40px 36px;
+          ">
+            <div style="
+              font-family: 'Cormorant', serif;
+              font-size: 3.5rem;
+              font-weight: 300;
+              line-height: 1;
+              color: var(--red, #9B2335);
+              margin-bottom: 12px;
+              letter-spacing: -0.02em;
+            ">霊気</div>
+            <div style="
+              font-family: 'Outfit', sans-serif;
+              font-size: 0.78rem;
+              letter-spacing: 0.12em;
+              text-transform: uppercase;
+              color: rgba(26,23,20,0.45);
+              margin-bottom: 32px;
+            ">Reiki — Das japanische Schriftzeichen</div>
+            <div style="display: flex; flex-direction: column; gap: 20px;">
+              <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <div style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(155,35,53,0.1);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-shrink: 0;
+                  font-family: 'Cormorant', serif;
+                  font-size: 1.05rem;
+                  font-weight: 600;
+                  color: var(--red, #9B2335);
+                ">霊</div>
+                <div>
+                  <div style="font-family: 'Cormorant', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal, #1A1714); margin-bottom: 4px;">Rei — Das Universelle</div>
+                  <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 300; color: rgba(26,23,20,0.6); line-height: 1.6;">Das Allumfassende, die höhere Ordnung, die alles verbindet</div>
+                </div>
+              </div>
+              <div style="display: flex; align-items: flex-start; gap: 16px;">
+                <div style="
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 50%;
+                  background: rgba(196,149,106,0.12);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  flex-shrink: 0;
+                  font-family: 'Cormorant', serif;
+                  font-size: 1.05rem;
+                  font-weight: 600;
+                  color: var(--amber, #C4956A);
+                ">気</div>
+                <div>
+                  <div style="font-family: 'Cormorant', serif; font-size: 1.1rem; font-weight: 500; color: var(--charcoal, #1A1714); margin-bottom: 4px;">Ki — Die Lebensenergie</div>
+                  <div style="font-family: 'Outfit', sans-serif; font-size: 0.85rem; font-weight: 300; color: rgba(26,23,20,0.6); line-height: 1.6;">Die Lebenskraft, die in jedem Lebewesen fliesst und wirkt</div>
+                </div>
+              </div>
+              <div style="
+                border-top: 1px solid rgba(196,149,106,0.2);
+                padding-top: 20px;
+                margin-top: 4px;
+              ">
+                <div style="font-family: 'Outfit', sans-serif; font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(26,23,20,0.4); margin-bottom: 6px;">Entdeckt von</div>
+                <div style="font-family: 'Cormorant', serif; font-size: 1.15rem; font-weight: 500; color: var(--charcoal, #1A1714);">Mikao Usui, Japan 1922</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       IMAGE
+       ============================================= -->
+  <div class="subpage-image-wrap anim-fade">
+    <img
+      src="../images/pflanzen-glasvasen-bokeh.jpg"
+      alt="Pflanzen in Glasvasen mit sanftem Bokeh-Licht — ruhige Atmosphäre für Reiki und Meditation"
+      class="subpage-image"
+      loading="lazy"
+    >
+  </div>
+
+  <!-- =============================================
+       SECTION 2 — BENEFITS / WIRKUNGSFELDER
+       ============================================= -->
+  <section class="subpage-section subpage-section--alt">
+    <div class="subpage-section__inner--wide">
+      <div style="text-align: center; max-width: 560px; margin: 0 auto 56px;" class="anim-fade">
+        <span class="subpage-section__tag">Wirkungsfelder</span>
+        <h2 class="subpage-section__heading">Was Reiki &amp; Meditation<br><em>für Sie bewirken kann</em></h2>
+      </div>
+
+      <div class="subpage-features">
+
+        <!-- Tiefe Entspannung -->
+        <div class="subpage-feature anim-fade anim-fade--delay-1">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="22" cy="22" r="16"/>
+            <path d="M22 14v8l5 3"/>
+            <path d="M8 22c0-7.73 6.27-14 14-14" stroke-opacity="0.35"/>
+          </svg>
+          <h3 class="subpage-feature__title">Tiefe Entspannung</h3>
+          <p class="subpage-feature__text">
+            Eine vollständige Auszeit vom Alltag — Körper und Geist kommen zur Ruhe und
+            dürfen loslassen. Die Sitzung schafft einen geschützten Raum, in dem tiefe
+            Entspannung auf natürliche Weise entstehen kann.
+          </p>
+        </div>
+
+        <!-- Innere Balance -->
+        <div class="subpage-feature anim-fade anim-fade--delay-2">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 6v32"/>
+            <path d="M10 16l12-10 12 10"/>
+            <path d="M10 28l12 10 12-10"/>
+            <circle cx="22" cy="22" r="3" fill="currentColor" stroke="none"/>
+          </svg>
+          <h3 class="subpage-feature__title">Innere Balance</h3>
+          <p class="subpage-feature__text">
+            Reiki fördert das harmonische Gleichgewicht im Energiefluss und kann dazu
+            beitragen, ein Gefühl von innerer Ausgeglichenheit und Zentrierung
+            wiederherzustellen — auf sanfte, nicht-invasive Weise.
+          </p>
+        </div>
+
+        <!-- Stressabbau -->
+        <div class="subpage-feature anim-fade anim-fade--delay-3">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 32c0-10 5-14 10-14s10 4 10 14"/>
+            <path d="M22 18V8"/>
+            <path d="M16 12c1.5-2.5 4-4 6-4s4.5 1.5 6 4"/>
+            <path d="M8 36h28"/>
+          </svg>
+          <h3 class="subpage-feature__title">Stressabbau</h3>
+          <p class="subpage-feature__text">
+            Anspannungen und Verspannungen, die sich im Alltag angesammelt haben, können
+            sich während der Sitzung lösen. Viele Gäste erleben bereits nach einer
+            Sitzung eine spürbare Erleichterung und neue Leichtigkeit.
+          </p>
+        </div>
+
+        <!-- Geistige Klarheit -->
+        <div class="subpage-feature anim-fade anim-fade--delay-1">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="22" cy="20" r="10"/>
+            <path d="M22 30v8"/>
+            <path d="M17 38h10"/>
+            <path d="M19 17l3-4 3 4-3 5z"/>
+          </svg>
+          <h3 class="subpage-feature__title">Geistige Klarheit</h3>
+          <p class="subpage-feature__text">
+            Die Kombination aus Reiki und Meditation schafft Stille im Geist. Viele
+            Gäste berichten von gesteigerter innerer Klarheit und einem verbesserten
+            Fokus — als würde sich ein innerer Nebel lichten.
+          </p>
+        </div>
+
+        <!-- Emotionales Wohlbefinden -->
+        <div class="subpage-feature anim-fade anim-fade--delay-2">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M22 36s-14-9-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 36 17c0 10-14 19-14 19z"/>
+          </svg>
+          <h3 class="subpage-feature__title">Emotionales Wohlbefinden</h3>
+          <p class="subpage-feature__text">
+            Reiki kann dabei unterstützen, emotionale Ausgeglichenheit und innere
+            Gelassenheit zu stärken. Die Sitzung bietet Raum, um emotional zur Ruhe
+            zu kommen und sich auf das Wesentliche zu besinnen.
+          </p>
+        </div>
+
+        <!-- Ganzheitliche Erfahrung -->
+        <div class="subpage-feature anim-fade anim-fade--delay-3">
+          <svg class="subpage-feature__icon" viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="22" cy="22" r="14"/>
+            <circle cx="22" cy="22" r="6"/>
+            <path d="M22 8v28M8 22h28"/>
+            <path d="M12.5 12.5l19 19M31.5 12.5l-19 19"/>
+          </svg>
+          <h3 class="subpage-feature__title">Ganzheitliche Erfahrung</h3>
+          <p class="subpage-feature__text">
+            Reiki &amp; Meditation sprechen Körper, Geist und Seele gleichermassen an.
+            Diese ganzheitliche Herangehensweise macht jede Sitzung zu einer tief
+            persönlichen und rundum regenerierenden Erfahrung.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       SECTION 3 — ABLAUF DER SITZUNG
+       ============================================= -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="subpage-two-col">
+
+        <div class="anim-fade">
+          <span class="subpage-section__tag">Ablauf</span>
+          <h2 class="subpage-section__heading">Ihre Sitzung —<br><em>was Sie erwartet</em></h2>
+          <p class="subpage-section__text">
+            Jede Sitzung beginnt mit einem kurzen persönlichen Gespräch, in dem Sie
+            Ihre Wünsche und Anliegen einbringen können. Danach legen Sie sich bequem
+            und vollständig bekleidet auf einer weichen Liege nieder.
+          </p>
+          <p class="subpage-section__text">
+            In einer ruhigen, achtsam gestalteten Atmosphäre mit sanfter Musik und
+            wohltuendem Duft beginnt die eigentliche Sitzung. Sigrun Jensen führt
+            behutsame Handpositionen an Ihrem Körper durch — stets respektvoll und
+            auf Ihre persönliche Komfortzone abgestimmt.
+          </p>
+
+          <div class="subpage-badge">
+            <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="8" cy="8" r="6"/>
+              <path d="M8 5v3l2 2"/>
+            </svg>
+            Dauer: ca. 60 Minuten
+          </div>
+        </div>
+
+        <div class="anim-fade anim-fade--delay-2">
+          <div class="subpage-steps">
+
+            <div class="subpage-step">
+              <div class="subpage-step__left">
+                <div class="subpage-step__num">1</div>
+                <div class="subpage-step__line"></div>
+              </div>
+              <div class="subpage-step__body">
+                <h3 class="subpage-step__title">Ankommen &amp; Gespräch</h3>
+                <p class="subpage-step__text">
+                  Sie werden herzlich empfangen. Ein kurzes Gespräch schafft Vertrauen und
+                  stimmt die Sitzung auf Ihre individuelle Situation ab.
+                </p>
+              </div>
+            </div>
+
+            <div class="subpage-step">
+              <div class="subpage-step__left">
+                <div class="subpage-step__num">2</div>
+                <div class="subpage-step__line"></div>
+              </div>
+              <div class="subpage-step__body">
+                <h3 class="subpage-step__title">Entspanntes Hinlegen</h3>
+                <p class="subpage-step__text">
+                  Vollständig bekleidet legen Sie sich auf einer bequemen Liege nieder.
+                  Eine weiche Decke, gedämpftes Licht und ruhige Musik begleiten Sie.
+                </p>
+              </div>
+            </div>
+
+            <div class="subpage-step">
+              <div class="subpage-step__left">
+                <div class="subpage-step__num">3</div>
+                <div class="subpage-step__line"></div>
+              </div>
+              <div class="subpage-step__body">
+                <h3 class="subpage-step__title">Sanfte Handpositionen</h3>
+                <p class="subpage-step__text">
+                  Die behutsamen Handpositionen folgen einem bewährten Ablauf. Viele
+                  Gäste gleiten schon nach wenigen Minuten in einen tief entspannten,
+                  traumähnlichen Zustand.
+                </p>
+              </div>
+            </div>
+
+            <div class="subpage-step">
+              <div class="subpage-step__left">
+                <div class="subpage-step__num">4</div>
+                <div class="subpage-step__line"></div>
+              </div>
+              <div class="subpage-step__body">
+                <h3 class="subpage-step__title">Geführte Meditation</h3>
+                <p class="subpage-step__text">
+                  Im Anschluss an die Reiki-Phase folgt eine sanfte geführte Meditation,
+                  die die innere Stille vertieft und Ihnen hilft, den Moment vollständig
+                  wahrzunehmen und zu geniessen.
+                </p>
+              </div>
+            </div>
+
+            <div class="subpage-step">
+              <div class="subpage-step__left">
+                <div class="subpage-step__num">5</div>
+                <div class="subpage-step__line"></div>
+              </div>
+              <div class="subpage-step__body">
+                <h3 class="subpage-step__title">Nachklingen &amp; Austausch</h3>
+                <p class="subpage-step__text">
+                  Nach der Sitzung haben Sie Zeit, wieder in den Alltag zurückzufinden.
+                  Auf Wunsch tauschen Sie Ihre Eindrücke aus und erhalten Empfehlungen
+                  für Ihren weiteren Weg.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CTA
+       ============================================= -->
+  <section class="subpage-cta">
+    <div class="subpage-cta__inner anim-fade">
+      <div class="subpage-cta__tag">Jetzt buchen</div>
+      <h2 class="subpage-cta__heading">Ihre Reiki-Sitzung buchen</h2>
+      <p class="subpage-cta__text">
+        Gönnen Sie sich einen Moment der tiefen Stille und Erneuerung. Sigrun Jensen
+        begleitet Sie mit Erfahrung, Herz und Feingefühl auf Ihrem Weg zu mehr
+        innerer Ruhe und Wohlbefinden.
+      </p>
+      <a href="../index.html#kontakt" class="btn btn--primary">Termin anfragen</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <span class="footer__logo-top">Jensen</span>
+            <span class="footer__logo-bottom">Healing Concept</span>
+          </a>
+          <p class="footer__tagline">Ihr Raum für Regeneration und Wohlbefinden im Berner Oberland.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Angebot</h4>
+            <a href="../index.html#rotlicht">Rotlicht-Wellness</a>
+            <a href="../index.html#vns">VNS-Wellness</a>
+            <a href="../index.html#angebot">Alle Angebote</a>
+          </div>
+          <div class="footer__col">
+            <h4>Studio</h4>
+            <a href="../index.html#philosophie">Philosophie</a>
+            <a href="../index.html#kontakt">Kontakt</a>
+            <a href="../index.html#kontakt">Termin buchen</a>
+          </div>
+          <div class="footer__col">
+            <h4>Kontakt</h4>
+            <a href="tel:+41763095069">076 309 50 69</a>
+            <a href="mailto:jensenhealingconcept@gmail.com">E-Mail senden</a>
+            <span>Reichenbach i. K.</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung oder Behandlung. Es werden keine medizinischen Diagnosen gestellt und keine Heilversprechen abgegeben.</p>
+        <div class="footer__legal">
+          <span>&copy; 2026 Jensen Healing Concept GmbH</span>
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Scroll-triggered fade animations for subpage elements
+    (function () {
+      var elements = document.querySelectorAll('.anim-fade');
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.12,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      elements.forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VNS-Wellness — Vagusnerv-Stimulation | Jensen Healing Concept</title>
+  <meta name="description" content="VNS-Wellness bei Jensen Healing Concept: Vagusnerv-Stimulation für tiefe Entspannung, innere Balance und natürliches Wohlbefinden im Berner Oberland.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+
+  <style>
+    /* ============================================
+       SUBPAGE — SHARED STYLES
+       ============================================ */
+
+    /* Hero */
+    .subpage-hero {
+      position: relative;
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: var(--space-xl);
+      overflow: hidden;
+      background-color: var(--charcoal);
+    }
+
+    .subpage-hero__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .subpage-hero__bg-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.45;
+    }
+
+    .subpage-hero__bg-orb--1 {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, var(--amber) 0%, transparent 70%);
+      top: -100px;
+      right: -100px;
+    }
+
+    .subpage-hero__bg-orb--2 {
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(155, 35, 53, 0.6) 0%, transparent 70%);
+      bottom: -80px;
+      left: 10%;
+    }
+
+    .subpage-hero__bg-orb--3 {
+      width: 250px;
+      height: 250px;
+      background: radial-gradient(circle, rgba(196, 149, 106, 0.4) 0%, transparent 70%);
+      top: 30%;
+      left: 40%;
+    }
+
+    .subpage-hero__grain {
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      background-size: 200px 200px;
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .subpage-hero__inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: calc(var(--nav-height) + var(--space-2xl)) var(--space-lg) 0;
+    }
+
+    .subpage-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone-light);
+      margin-bottom: var(--space-lg);
+      transition: color var(--transition);
+    }
+
+    .subpage-hero__back:hover {
+      color: var(--amber);
+    }
+
+    .subpage-hero__back svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+    }
+
+    .subpage-hero__tag {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+
+    .subpage-hero__title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      line-height: 1;
+      color: var(--cream);
+      margin-bottom: var(--space-md);
+      letter-spacing: -0.01em;
+    }
+
+    .subpage-hero__lead {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      font-weight: 300;
+      color: var(--stone-light);
+      max-width: 600px;
+      line-height: 1.7;
+    }
+
+    /* Sections */
+    .subpage-section {
+      padding: var(--space-2xl) var(--space-lg);
+    }
+
+    .subpage-section--alt {
+      background-color: var(--cream-mid);
+    }
+
+    .subpage-section__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .subpage-section__header {
+      margin-bottom: var(--space-xl);
+    }
+
+    .subpage-section__title {
+      font-family: var(--font-display);
+      font-weight: 400;
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      color: var(--charcoal);
+      margin-bottom: var(--space-md);
+      line-height: 1.15;
+    }
+
+    .subpage-section__lead {
+      font-family: var(--font-body);
+      font-size: 1.0625rem;
+      color: var(--charcoal-light);
+      max-width: 680px;
+      line-height: 1.8;
+    }
+
+    .subpage-section__body {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--charcoal-light);
+      line-height: 1.85;
+      max-width: 720px;
+    }
+
+    .subpage-section__body p + p {
+      margin-top: var(--space-md);
+    }
+
+    /* Two-column layout */
+    .subpage-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+
+    .subpage-cols--reversed {
+      direction: rtl;
+    }
+
+    .subpage-cols--reversed > * {
+      direction: ltr;
+    }
+
+    /* Image block */
+    .subpage-image {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+    }
+
+    .subpage-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .subpage-image__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(196, 149, 106, 0.35) 0%, rgba(155, 35, 53, 0.15) 100%);
+      mix-blend-mode: multiply;
+    }
+
+    .subpage-image__caption {
+      position: absolute;
+      bottom: var(--space-md);
+      left: var(--space-md);
+      right: var(--space-md);
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.75);
+    }
+
+    /* Feature cards */
+    .subpage-features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+    }
+
+    .subpage-feature {
+      background: white;
+      border: 1px solid var(--cream-dark, #E5DED3);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg) var(--space-md);
+      transition: transform var(--transition), box-shadow var(--transition);
+    }
+
+    .subpage-feature:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26, 23, 20, 0.08);
+    }
+
+    .subpage-feature__icon {
+      width: 48px;
+      height: 48px;
+      background: linear-gradient(135deg, rgba(196, 149, 106, 0.15) 0%, rgba(196, 149, 106, 0.05) 100%);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: var(--space-md);
+      color: var(--amber);
+    }
+
+    .subpage-feature__icon svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    .subpage-feature__title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .subpage-feature__text {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--charcoal-light);
+      line-height: 1.7;
+    }
+
+    /* Process steps */
+    .subpage-process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-md);
+      position: relative;
+    }
+
+    .subpage-process::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: calc(16.666% + var(--space-md));
+      right: calc(16.666% + var(--space-md));
+      height: 1px;
+      background: linear-gradient(90deg, var(--amber) 0%, var(--red-light) 100%);
+      opacity: 0.4;
+    }
+
+    .subpage-process__step {
+      position: relative;
+      text-align: center;
+      padding: var(--space-lg) var(--space-md) var(--space-md);
+    }
+
+    .subpage-process__step-num {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--amber) 0%, var(--red-light) 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: white;
+      margin: 0 auto var(--space-md);
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 4px 20px rgba(196, 149, 106, 0.35);
+    }
+
+    .subpage-process__step-title {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .subpage-process__step-text {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--charcoal-light);
+      line-height: 1.7;
+    }
+
+    /* Vagus anatomy info box */
+    .subpage-info-box {
+      background: linear-gradient(135deg, var(--charcoal) 0%, var(--charcoal-mid, #2D2924) 100%);
+      border-radius: var(--radius-lg);
+      padding: var(--space-xl);
+      color: var(--cream);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subpage-info-box::before {
+      content: '';
+      position: absolute;
+      top: -60px;
+      right: -60px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 149, 106, 0.2) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .subpage-info-box__tag {
+      font-family: var(--font-body);
+      font-size: 0.7rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      margin-bottom: var(--space-md);
+      display: block;
+    }
+
+    .subpage-info-box__title {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: var(--space-md);
+      line-height: 1.2;
+    }
+
+    .subpage-info-box__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-sm) var(--space-lg);
+      margin-top: var(--space-lg);
+    }
+
+    .subpage-info-box__item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      color: var(--stone-light);
+      line-height: 1.6;
+    }
+
+    .subpage-info-box__item-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber);
+      flex-shrink: 0;
+      margin-top: 0.55em;
+    }
+
+    /* CTA Section */
+    .subpage-cta {
+      background: linear-gradient(135deg, var(--charcoal) 0%, #0D0B09 100%);
+      padding: var(--space-2xl) var(--space-lg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subpage-cta::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 700px;
+      height: 700px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(196, 149, 106, 0.12) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .subpage-cta__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .subpage-cta__tag {
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--amber);
+      display: block;
+      margin-bottom: var(--space-md);
+    }
+
+    .subpage-cta__title {
+      font-family: var(--font-display);
+      font-weight: 300;
+      font-size: clamp(2.25rem, 5vw, 4rem);
+      color: var(--cream);
+      line-height: 1.1;
+      margin-bottom: var(--space-md);
+    }
+
+    .subpage-cta__text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      color: var(--stone-light);
+      line-height: 1.7;
+      margin-bottom: var(--space-xl);
+    }
+
+    .subpage-cta__actions {
+      display: flex;
+      gap: var(--space-md);
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* Quote / highlight strip */
+    .subpage-quote {
+      border-left: 3px solid var(--amber);
+      padding-left: var(--space-md);
+      margin: var(--space-lg) 0;
+    }
+
+    .subpage-quote p {
+      font-family: var(--font-display);
+      font-size: 1.375rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--charcoal);
+      line-height: 1.5;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .subpage-features {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .subpage-cols {
+        grid-template-columns: 1fr;
+        direction: ltr;
+      }
+
+      .subpage-cols--reversed {
+        direction: ltr;
+      }
+
+      .subpage-process {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+      }
+
+      .subpage-process::before {
+        display: none;
+      }
+
+      .subpage-info-box__list {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .subpage-hero {
+        min-height: 50vh;
+      }
+
+      .subpage-section {
+        padding: var(--space-xl) var(--space-sm);
+      }
+
+      .subpage-features {
+        grid-template-columns: 1fr;
+      }
+
+      .subpage-cta {
+        padding: var(--space-xl) var(--space-sm);
+      }
+
+      .subpage-info-box {
+        padding: var(--space-lg) var(--space-md);
+      }
+    }
+  </style>
+  <script src="../password.js"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav"><div class="nav__inner"><a href="../index.html" class="nav__logo"><span class="nav__logo-top">Jensen</span><span class="nav__logo-bottom">Healing Concept</span></a><div class="nav__links" id="navLinks"><a href="../index.html#rotlicht" class="nav__link">Rotlicht</a><a href="../index.html#vns" class="nav__link">VNS</a><a href="../index.html#philosophie" class="nav__link">Philosophie</a><a href="../index.html#angebot" class="nav__link">Angebot</a><a href="../index.html#kontakt" class="nav__link">Kontakt</a></div><a href="../index.html#kontakt" class="nav__cta">Termin anfragen</a><button class="nav__toggle" id="navToggle" aria-label="Menü öffnen"><span></span><span></span><span></span></button></div></nav>
+  <div class="mobile-menu" id="mobileMenu"><div class="mobile-menu__inner"><a href="../index.html#rotlicht" class="mobile-menu__link">Rotlicht</a><a href="../index.html#vns" class="mobile-menu__link">VNS</a><a href="../index.html#philosophie" class="mobile-menu__link">Philosophie</a><a href="../index.html#angebot" class="mobile-menu__link">Angebot</a><a href="../index.html#kontakt" class="mobile-menu__link">Kontakt</a><a href="../index.html#kontakt" class="btn btn--primary mobile-menu__cta">Termin anfragen</a></div></div>
+
+  <!-- SUBPAGE HERO -->
+  <section class="subpage-hero">
+    <div class="subpage-hero__bg">
+      <div class="subpage-hero__bg-orb subpage-hero__bg-orb--1"></div>
+      <div class="subpage-hero__bg-orb subpage-hero__bg-orb--2"></div>
+      <div class="subpage-hero__bg-orb subpage-hero__bg-orb--3"></div>
+      <div class="subpage-hero__grain"></div>
+    </div>
+    <div class="subpage-hero__inner">
+      <a href="../index.html#angebot" class="subpage-hero__back reveal">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M10 12L6 8l4-4"/>
+        </svg>
+        Zurück zum Angebot
+      </a>
+      <span class="subpage-hero__tag reveal reveal--d1">02 &mdash; Schwerpunkt</span>
+      <h1 class="subpage-hero__title reveal reveal--d2">VNS-Wellness</h1>
+      <p class="subpage-hero__lead reveal reveal--d3">
+        Vagusnerv-Stimulation für tiefe Entspannung und innere Balance &mdash; eine moderne Wellness-Anwendung, die den natürlichen Ruhemodus Ihres Körpers unterstützt.
+      </p>
+    </div>
+  </section>
+
+  <!-- SECTION 1: WAS IST VNS? -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="subpage-cols">
+
+        <div class="anim-fade">
+          <span class="section-tag">Was ist VNS-Wellness?</span>
+          <h2 class="subpage-section__title">Der Vagusnerv &mdash; Ihre innere Verbindung</h2>
+
+          <div class="subpage-section__body">
+            <p>
+              Der Vagusnerv ist der längste Hirnnerv des menschlichen Körpers. Er verläuft vom Hirnstamm durch Hals, Brust und Bauch und verbindet das Gehirn mit den wichtigsten inneren Organen &mdash; Herz, Lunge und Verdauungstrakt eingeschlossen.
+            </p>
+            <p>
+              Als zentraler Bestandteil des parasympathischen Nervensystems spielt er eine wesentliche Rolle für unsere innere Balance. Das parasympathische System ist jener Teil unseres Nervensystems, der für Ruhe, Erholung und Regeneration zuständig ist &mdash; der natürliche Gegenpol zu Anspannung und Aktivierung.
+            </p>
+            <p>
+              VNS-Wellness ist eine zeitgemässe Wellnessanwendung, die sanft auf den Vagusnerv einwirkt und so das natürliche Gleichgewicht des Nervensystems unterstützt. Das Ergebnis: ein tiefes Gefühl von Entspannung und Ruhe, das sich von innen heraus entfaltet.
+            </p>
+          </div>
+
+          <div class="subpage-quote">
+            <p>«Wenn der Vagusnerv in seinem natürlichen Rhythmus schwingt, findet der Körper zu seiner eigenen Stille zurück.»</p>
+          </div>
+        </div>
+
+        <div class="subpage-image anim-fade">
+          <img
+            src="../images/herzfrequenz-pulswelle-muster.jpg"
+            alt="Pulswelle — Symbol für den natürlichen Rhythmus des Vagusnervs"
+            loading="lazy"
+          >
+          <div class="subpage-image__overlay"></div>
+          <span class="subpage-image__caption">Natürlicher Rhythmus &mdash; Vagusnerv-Wellness</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: WIRKUNGSWEISE DES VAGUSNERVS -->
+  <section class="subpage-section subpage-section--alt">
+    <div class="subpage-section__inner">
+      <div class="subpage-section__header anim-fade">
+        <span class="section-tag">Hintergrundwissen</span>
+        <h2 class="subpage-section__title">Wie der Vagusnerv wirkt</h2>
+        <p class="subpage-section__lead">
+          Ein besseres Verständnis des Vagusnervs hilft dabei, die Tiefe dieser Wellness-Anwendung wirklich zu spüren und wertzuschätzen.
+        </p>
+      </div>
+
+      <div class="subpage-info-box anim-fade">
+        <span class="subpage-info-box__tag">Der Parasympathikus &mdash; Ihr inneres Gleichgewichtssystem</span>
+        <h3 class="subpage-info-box__title">
+          Vom Gehirn bis zu den Organen &mdash;<br>ein Netzwerk der Stille
+        </h3>
+        <p style="font-family: var(--font-body); font-size: 0.95rem; color: var(--stone-light); line-height: 1.8; max-width: 680px;">
+          Der Vagusnerv überträgt Signale in beide Richtungen: von den Organen zum Gehirn und zurück. Rund 80&nbsp;% seiner Fasern sind afferent &mdash; das bedeutet, sie tragen Informationen aus dem Körperinneren zum Gehirn. Dieses ständige Rückmelden des Körperzustandes beeinflusst, wie wir uns fühlen, wie wir auf Stress reagieren und wie gut wir zur Ruhe kommen können.
+        </p>
+        <div class="subpage-info-box__list">
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Verbindet Gehirn mit Herz, Lunge und Verdauungstrakt</span>
+          </div>
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Zentraler Bestandteil des parasympathischen Nervensystems</span>
+          </div>
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Zuständig für Ruhe, Erholung und Regeneration</span>
+          </div>
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Beeinflusst Herzrhythmus, Atmung und Stimmung</span>
+          </div>
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Trägt zur natürlichen Schlafqualität bei</span>
+          </div>
+          <div class="subpage-info-box__item">
+            <span class="subpage-info-box__item-dot"></span>
+            <span>Unterstützt das allgemeine Wohlbefinden von innen</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: VORTEILE / FEATURES -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="subpage-section__header anim-fade">
+        <span class="section-tag">Was VNS-Wellness für Sie tun kann</span>
+        <h2 class="subpage-section__title">Sechs Aspekte des Wohlbefindens</h2>
+        <p class="subpage-section__lead">
+          Unsere VNS-Wellness-Anwendung richtet sich ganzheitlich an Körper und Geist. Diese Aspekte stehen dabei im Mittelpunkt.
+        </p>
+      </div>
+
+      <div class="subpage-features">
+
+        <!-- Feature 1: Tiefe Entspannung -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/>
+              <path d="M8 12c0-2.2 1.8-4 4-4"/>
+              <path d="M12 16a4 4 0 004-4"/>
+              <circle cx="12" cy="12" r="1.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Tiefe Entspannung</h3>
+          <p class="subpage-feature__text">
+            Die Anwendung fördert einen tiefen Zustand innerer Ruhe und Gelassenheit. Viele Gäste beschreiben das Gefühl als wohltuend erholsam &mdash; eine Qualität von Stille, die im Alltag selten erreichbar ist.
+          </p>
+        </div>
+
+        <!-- Feature 2: Natürliches Gleichgewicht -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v18M3 12h18"/>
+              <path d="M6.34 6.34l11.32 11.32M17.66 6.34L6.34 17.66"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Natürliches Gleichgewicht</h3>
+          <p class="subpage-feature__text">
+            VNS-Wellness unterstützt die natürliche Balance zwischen Anspannung und Entspannung. Gönnen Sie Ihrem Nervensystem die Möglichkeit, sein eigenes Gleichgewicht wiederzufinden.
+          </p>
+        </div>
+
+        <!-- Feature 3: Stressreduktion -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 12c0 0 3-5 9-5s9 5 9 5-3 5-9 5-9-5-9-5z"/>
+              <circle cx="12" cy="12" r="2.5"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Stressreduktion</h3>
+          <p class="subpage-feature__text">
+            Eine sanfte Unterstützung dabei, den Stress des Alltags loszulassen. Die Anwendung schafft Raum zum Durchatmen &mdash; buchstäblich und im übertragenen Sinn.
+          </p>
+        </div>
+
+        <!-- Feature 4: Allgemeines Wohlbefinden -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Allgemeines Wohlbefinden</h3>
+          <p class="subpage-feature__text">
+            Ein ganzheitlicher Beitrag zu körperlichem und seelischem Wohlbefinden. Die VNS-Wellness-Anwendung wirkt nicht isoliert, sondern spricht den ganzen Menschen an.
+          </p>
+        </div>
+
+        <!-- Feature 5: Innere Ruhe -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="12" cy="12" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Innere Ruhe</h3>
+          <p class="subpage-feature__text">
+            VNS-Wellness fördert ein tiefes Gefühl von Zentriertheit und innerer Stille. Eine Qualität von Gegenwärtigkeit, die weit über die Anwendung selbst hinausreichen kann.
+          </p>
+        </div>
+
+        <!-- Feature 6: Besserer Schlaf -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Besserer Schlaf</h3>
+          <p class="subpage-feature__text">
+            Wer zur Ruhe findet, schläft besser. Die VNS-Wellness-Anwendung unterstützt die natürliche Schlafqualität, indem sie dem Körper hilft, in seinen Erholungsmodus zu gleiten.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: ABLAUF / PROZESS -->
+  <section class="subpage-section subpage-section--alt">
+    <div class="subpage-section__inner">
+      <div class="subpage-section__header anim-fade">
+        <span class="section-tag">Ihr Erlebnis bei uns</span>
+        <h2 class="subpage-section__title">So läuft Ihre VNS-Wellness-Anwendung ab</h2>
+        <p class="subpage-section__lead">
+          Jede Anwendung beginnt mit Ihnen &mdash; Ihren Bedürfnissen, Ihrem Tempo, Ihrer persönlichen Ausgangslage. Wir begleiten Sie durch jeden Schritt.
+        </p>
+      </div>
+
+      <div class="subpage-process">
+
+        <div class="subpage-process__step anim-fade">
+          <div class="subpage-process__step-num">1</div>
+          <h3 class="subpage-process__step-title">Beratung</h3>
+          <p class="subpage-process__step-text">
+            Wir nehmen uns Zeit, um Ihre Wünsche und Ihre aktuelle Lebenssituation kennenzulernen. In einem persönlichen Gespräch klären wir, wie die VNS-Wellness-Anwendung optimal auf Sie abgestimmt werden kann.
+          </p>
+        </div>
+
+        <div class="subpage-process__step anim-fade">
+          <div class="subpage-process__step-num">2</div>
+          <h3 class="subpage-process__step-title">Anwendung</h3>
+          <p class="subpage-process__step-text">
+            In einer ruhigen, sorgfältig gestalteten Atmosphäre erleben Sie die eigentliche VNS-Wellness-Anwendung. Alles ist darauf ausgelegt, Ihnen ein Höchstmass an Entspannung und Wohlbefinden zu ermöglichen.
+          </p>
+        </div>
+
+        <div class="subpage-process__step anim-fade">
+          <div class="subpage-process__step-num">3</div>
+          <h3 class="subpage-process__step-title">Nachbesprechung</h3>
+          <p class="subpage-process__step-text">
+            Nach der Anwendung nehmen wir uns Zeit für Ihre Eindrücke. Wir geben Ihnen Empfehlungen mit auf den Weg, wie Sie das Wohlgefühl im Alltag weiter pflegen können.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: KOMBINATION MIT ROTLICHT -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="subpage-cols subpage-cols--reversed">
+
+        <div class="subpage-image anim-fade">
+          <img
+            src="../images/herzfrequenz-pulswelle-muster.jpg"
+            alt="Schwingungsmuster — Synergieeffekte von VNS-Wellness und Rotlicht"
+            loading="lazy"
+            style="filter: hue-rotate(15deg) saturate(0.7);"
+          >
+          <div class="subpage-image__overlay" style="background: linear-gradient(135deg, rgba(155, 35, 53, 0.3) 0%, rgba(196, 149, 106, 0.1) 100%);"></div>
+          <span class="subpage-image__caption">Ganzheitliche Wellness &mdash; VNS &amp; Rotlicht</span>
+        </div>
+
+        <div class="anim-fade">
+          <span class="section-tag">Kombinationsangebot</span>
+          <h2 class="subpage-section__title">VNS-Wellness &amp; Rotlicht &mdash; gemeinsam wirksamer</h2>
+          <div class="subpage-section__body">
+            <p>
+              Bei Jensen Healing Concept haben Sie die Möglichkeit, VNS-Wellness und Rotlicht-Wellness miteinander zu kombinieren. Beide Anwendungen ergänzen sich auf natürliche Weise: Während die Rotlicht-Anwendung die Oberfläche anspricht, wirkt die VNS-Wellness tief ins innere Gleichgewicht hinein.
+            </p>
+            <p>
+              Viele unserer Gäste schätzen diese Kombination als besonders wohltuend und berichten von einem tiefen Gefühl der Regeneration, das noch lange nach der Anwendung anhält.
+            </p>
+          </div>
+          <div style="margin-top: var(--space-lg);">
+            <a href="rotlicht-wellness.html" class="btn btn--outline">Rotlicht-Wellness entdecken</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA SECTION -->
+  <section class="subpage-cta">
+    <div class="subpage-cta__inner">
+      <span class="subpage-cta__tag anim-fade">Jetzt erleben</span>
+      <h2 class="subpage-cta__title anim-fade">Erleben Sie tiefe Entspannung</h2>
+      <p class="subpage-cta__text anim-fade">
+        Gönnen Sie sich einen Moment der Stille. Vereinbaren Sie jetzt Ihren persönlichen VNS-Wellness-Termin bei Jensen Healing Concept im Berner Oberland.
+      </p>
+      <div class="subpage-cta__actions anim-fade">
+        <a href="../index.html#kontakt" class="btn btn--primary">Termin anfragen</a>
+        <a href="../index.html#angebot" class="btn btn--outline" style="color: var(--stone-light); border-color: var(--stone);">Alle Angebote</a>
+      </div>
+      <p style="margin-top: var(--space-lg); font-family: var(--font-body); font-size: 0.8rem; color: var(--stone); line-height: 1.6;" class="anim-fade">
+        Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung.
+      </p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer"><div class="footer__inner"><div class="footer__top"><div class="footer__brand"><a href="../index.html" class="footer__logo"><span class="footer__logo-top">Jensen</span><span class="footer__logo-bottom">Healing Concept</span></a><p class="footer__tagline">Ihr Raum für Regeneration und Wohlbefinden im Berner Oberland.</p></div><div class="footer__links"><div class="footer__col"><h4>Angebot</h4><a href="../index.html#rotlicht">Rotlicht-Wellness</a><a href="../index.html#vns">VNS-Wellness</a><a href="../index.html#angebot">Alle Angebote</a></div><div class="footer__col"><h4>Studio</h4><a href="../index.html#philosophie">Philosophie</a><a href="../index.html#kontakt">Kontakt</a><a href="../index.html#kontakt">Termin buchen</a></div><div class="footer__col"><h4>Kontakt</h4><a href="tel:+41763095069">076 309 50 69</a><a href="mailto:jensenhealingconcept@gmail.com">E-Mail senden</a><span>Reichenbach i. K.</span></div></div></div><div class="footer__bottom"><p class="footer__disclaimer">Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung oder Behandlung. Es werden keine medizinischen Diagnosen gestellt und keine Heilversprechen abgegeben.</p><div class="footer__legal"><span>&copy; 2026 Jensen Healing Concept GmbH</span><a href="#">Impressum</a><a href="#">Datenschutz</a></div></div></div></footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

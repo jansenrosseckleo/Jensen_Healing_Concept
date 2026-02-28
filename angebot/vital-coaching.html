@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vital-Coaching — Jensen Healing Concept</title>
+  <meta name="description" content="Individuelle Beratung zu Ernährung, Vitalstoffen und nachhaltigem Wohlbefinden. Hochwertige, bioverfügbare Nahrungsergänzungen von Platinum Health Europe.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    /* ============================================
+       SUBPAGE — Shared Subpage Styles
+       ============================================ */
+
+    /* Hero */
+    .subpage-hero {
+      position: relative;
+      min-height: 52vh;
+      display: flex;
+      align-items: center;
+      padding-top: var(--nav-height);
+      background-color: var(--charcoal);
+      overflow: hidden;
+    }
+
+    .subpage-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 60% at 60% 40%, rgba(155, 35, 53, 0.22) 0%, transparent 70%),
+                  radial-gradient(ellipse 40% 50% at 20% 80%, rgba(196, 149, 106, 0.10) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .subpage-hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      text-align: center;
+    }
+
+    .subpage-hero__back {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-family: var(--font-body);
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--stone-light);
+      margin-bottom: 2rem;
+      transition: color var(--transition);
+    }
+
+    .subpage-hero__back:hover {
+      color: var(--amber-light);
+    }
+
+    .subpage-hero__back svg {
+      width: 14px;
+      height: 14px;
+      flex-shrink: 0;
+    }
+
+    .subpage-hero__title {
+      font-family: var(--font-display);
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 400;
+      line-height: 1.1;
+      color: var(--cream);
+      margin-bottom: 1.25rem;
+    }
+
+    .subpage-hero__lead {
+      font-family: var(--font-body);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--stone-light);
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* Section Tag */
+    .section-tag {
+      display: inline-block;
+      font-family: var(--font-body);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--red-light);
+      background: rgba(155, 35, 53, 0.10);
+      border: 1px solid rgba(155, 35, 53, 0.25);
+      border-radius: 50px;
+      padding: 0.3em 1em;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Sections */
+    .subpage-section {
+      padding: 5rem 2rem;
+      background-color: var(--cream);
+    }
+
+    .subpage-section--alt {
+      background-color: var(--cream-mid);
+    }
+
+    .subpage-section__inner {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .subpage-section__inner--wide {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .subpage-section__heading {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 4vw, 2.9rem);
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--charcoal);
+      margin-bottom: 1.25rem;
+    }
+
+    .subpage-section__text {
+      font-family: var(--font-body);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--charcoal-light);
+    }
+
+    .subpage-section__text + .subpage-section__text {
+      margin-top: 1rem;
+    }
+
+    /* Image */
+    .subpage-image {
+      width: 100%;
+      max-height: 460px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      display: block;
+      box-shadow: 0 12px 48px rgba(26, 23, 20, 0.14);
+    }
+
+    .subpage-image-wrap {
+      padding: 0 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    /* Features / Benefit Cards */
+    .subpage-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+
+    .subpage-feature {
+      background: #fff;
+      border: 1px solid var(--cream-dark);
+      border-radius: var(--radius-md);
+      padding: 2rem 1.75rem;
+      transition: box-shadow var(--transition), transform var(--transition);
+    }
+
+    .subpage-feature:hover {
+      box-shadow: 0 8px 32px rgba(155, 35, 53, 0.09);
+      transform: translateY(-3px);
+    }
+
+    .subpage-feature__icon {
+      width: 44px;
+      height: 44px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(155, 35, 53, 0.08);
+      border-radius: var(--radius-sm);
+      margin-bottom: 1.1rem;
+      color: var(--red);
+      flex-shrink: 0;
+    }
+
+    .subpage-feature__icon svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .subpage-feature__title {
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .subpage-feature__text {
+      font-family: var(--font-body);
+      font-size: 0.93rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: var(--charcoal-light);
+    }
+
+    /* Process Steps */
+    .subpage-process {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0;
+      margin-top: 2.5rem;
+      position: relative;
+    }
+
+    .subpage-process-step {
+      position: relative;
+      text-align: center;
+      padding: 2.5rem 2rem;
+    }
+
+    .subpage-process-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: calc(2.5rem + 22px);
+      right: 0;
+      width: 50%;
+      height: 1px;
+      background: linear-gradient(to right, var(--red-light), transparent);
+      opacity: 0.35;
+    }
+
+    .subpage-process-step:not(:first-child)::before {
+      content: '';
+      position: absolute;
+      top: calc(2.5rem + 22px);
+      left: 0;
+      width: 50%;
+      height: 1px;
+      background: linear-gradient(to left, var(--red-light), transparent);
+      opacity: 0.35;
+    }
+
+    .subpage-process-step__number {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--red);
+      color: #fff;
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1.1rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .subpage-process-step__title {
+      font-family: var(--font-display);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--charcoal);
+      margin-bottom: 0.5rem;
+    }
+
+    .subpage-process-step__text {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: var(--charcoal-light);
+    }
+
+    /* CTA */
+    .subpage-cta {
+      background-color: var(--charcoal);
+      padding: 5rem 2rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .subpage-cta::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 70% at 50% 50%, rgba(155, 35, 53, 0.18) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .subpage-cta__inner {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .subpage-cta__title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 400;
+      color: var(--cream);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .subpage-cta__text {
+      font-family: var(--font-body);
+      font-size: 1rem;
+      font-weight: 300;
+      color: var(--stone-light);
+      margin-bottom: 2rem;
+      line-height: 1.75;
+    }
+
+    /* Btn */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: var(--font-body);
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      padding: 0.85em 2em;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background var(--transition), color var(--transition), box-shadow var(--transition), transform var(--transition);
+    }
+
+    .btn--primary {
+      background: var(--red);
+      color: #fff;
+    }
+
+    .btn--primary:hover {
+      background: var(--red-dark);
+      box-shadow: 0 6px 24px rgba(155, 35, 53, 0.35);
+      transform: translateY(-2px);
+    }
+
+    /* Animation */
+    .anim-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .anim-fade.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .subpage-hero__inner {
+        padding: 3.5rem 1.5rem 3rem;
+      }
+
+      .subpage-section {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .subpage-features {
+        grid-template-columns: 1fr;
+      }
+
+      .subpage-process {
+        grid-template-columns: 1fr;
+      }
+
+      .subpage-process-step::after,
+      .subpage-process-step::before {
+        display: none;
+      }
+
+      .subpage-cta {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .subpage-image-wrap {
+        padding: 0 1.5rem;
+      }
+    }
+  </style>
+  <script src="../password.js"></script>
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="../index.html" class="nav__logo">
+        <span class="nav__logo-top">Jensen</span>
+        <span class="nav__logo-bottom">Healing Concept</span>
+      </a>
+      <div class="nav__links" id="navLinks">
+        <a href="../index.html#rotlicht" class="nav__link">Rotlicht</a>
+        <a href="../index.html#vns" class="nav__link">VNS</a>
+        <a href="../index.html#philosophie" class="nav__link">Philosophie</a>
+        <a href="../index.html#angebot" class="nav__link">Angebot</a>
+        <a href="../index.html#kontakt" class="nav__link">Kontakt</a>
+      </div>
+      <a href="../index.html#kontakt" class="nav__cta">Termin anfragen</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu__inner">
+      <a href="../index.html#rotlicht" class="mobile-menu__link">Rotlicht</a>
+      <a href="../index.html#vns" class="mobile-menu__link">VNS</a>
+      <a href="../index.html#philosophie" class="mobile-menu__link">Philosophie</a>
+      <a href="../index.html#angebot" class="mobile-menu__link">Angebot</a>
+      <a href="../index.html#kontakt" class="mobile-menu__link">Kontakt</a>
+      <a href="../index.html#kontakt" class="btn btn--primary mobile-menu__cta">Termin anfragen</a>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <section class="subpage-hero">
+    <div class="subpage-hero__inner">
+      <a href="../index.html#angebot" class="subpage-hero__back anim-fade">
+        <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9 2L4 7l5 5"/>
+        </svg>
+        Angebot
+      </a>
+      <div class="section-tag anim-fade">Angebot</div>
+      <h1 class="subpage-hero__title anim-fade">Vital-Coaching</h1>
+      <p class="subpage-hero__lead anim-fade">Individuelle Beratung zu Ernährung, Vitalstoffen und nachhaltigem Wohlbefinden.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 1: Was ist Vital-Coaching? -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="section-tag anim-fade">Ganzheitliches Wohlbefinden</div>
+      <h2 class="subpage-section__heading anim-fade">Was ist Vital-Coaching?</h2>
+      <p class="subpage-section__text anim-fade">
+        Vital-Coaching ist eine persönliche Begleitform, die sich ganz auf Ihre individuelle Situation ausrichtet. Im Mittelpunkt stehen Ernährung, Vitalität und ein nachhaltiges Wohlbefinden — abgestimmt auf Ihren Lebensstil und Ihre persönlichen Ziele.
+      </p>
+      <p class="subpage-section__text anim-fade">
+        Die Beratung kann eigenständig genutzt oder ideal mit den Ergebnissen einer Vitalstoff-Analyse kombiniert werden, um ein vollständiges Bild Ihrer Vitalstoffsituation zu erhalten. Auf dieser Grundlage erhalten Sie gezielte Empfehlungen zu hochwertigen, bioverfügbaren Nahrungsergänzungen — ausgewählt aus dem Sortiment von <strong>Platinum Health Europe</strong>.
+      </p>
+      <p class="subpage-section__text anim-fade">
+        Ziel ist es, Sie langfristig zu begleiten und gemeinsam mit Ihnen nachhaltige Gewohnheiten zu entwickeln, die Ihre Energie und Ihr Wohlbefinden im Alltag spürbar unterstützen.
+      </p>
+    </div>
+  </section>
+
+  <!-- IMAGE -->
+  <div class="subpage-image-wrap anim-fade">
+    <img
+      src="../images/orangen-blume-ernaehrung-vitalstoffe.jpg"
+      alt="Frische Orangen und Blüten als Symbol für Ernährung und Vitalstoffe"
+      class="subpage-image"
+      loading="lazy"
+      width="1100"
+      height="460"
+    >
+  </div>
+
+  <!-- SECTION 2: Ihre Vorteile -->
+  <section class="subpage-section subpage-section--alt">
+    <div class="subpage-section__inner--wide">
+      <div class="section-tag anim-fade">Was Sie erwartet</div>
+      <h2 class="subpage-section__heading anim-fade">Ihre Vorteile im Vital-Coaching</h2>
+      <div class="subpage-features">
+
+        <!-- Card 1: Individuelle Beratung -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="4"/>
+              <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Individuelle Beratung</h3>
+          <p class="subpage-feature__text">Kein Schema F — Ihre Beratung richtet sich vollständig nach Ihren persönlichen Bedürfnissen, Zielen und Ihrer Lebenssituation.</p>
+        </div>
+
+        <!-- Card 2: Ernährungsoptimierung -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2a9 9 0 0 1 9 9c0 4.97-9 13-9 13S3 15.97 3 11a9 9 0 0 1 9-9z"/>
+              <circle cx="12" cy="11" r="3"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Ernährungsoptimierung</h3>
+          <p class="subpage-feature__text">Praktische Orientierung zu einer ausgewogenen, vitalstoffreichen Ernährung — praxisnah und alltagstauglich für mehr Energie und Wohlbefinden.</p>
+        </div>
+
+        <!-- Card 3: Hochwertige Vitalstoffe -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2V9M9 21H5a2 2 0 0 1-2-2V9m0 0h18"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Hochwertige Vitalstoffe</h3>
+          <p class="subpage-feature__text">Empfehlungen zu premium-bioverfügbaren Nahrungsergänzungen aus dem Sortiment von Platinum Health Europe — für optimale Aufnahme und Wirksamkeit.</p>
+        </div>
+
+        <!-- Card 4: Ganzheitlicher Ansatz -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 3v9l5 3"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Ganzheitlicher Ansatz</h3>
+          <p class="subpage-feature__text">Körper, Geist und Lebensstil werden als Einheit betrachtet. Der Coaching-Ansatz berücksichtigt alle Aspekte, die Ihr Wohlbefinden beeinflussen.</p>
+        </div>
+
+        <!-- Card 5: Nachhaltige Begleitung -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-5.5 8-12a8 8 0 1 0-16 0c0 6.5 8 12 8 12z"/>
+              <path d="M8 12l3 3 5-5"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Nachhaltige Begleitung</h3>
+          <p class="subpage-feature__text">Kein einmaliger Impuls, sondern kontinuierliche Begleitung. Fortschritt und Anpassungen werden gemeinsam besprochen, damit Veränderungen langfristig Bestand haben.</p>
+        </div>
+
+        <!-- Card 6: Kombination mit Analyse -->
+        <div class="subpage-feature anim-fade">
+          <div class="subpage-feature__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="3" width="7" height="7" rx="1"/>
+              <rect x="14" y="3" width="7" height="7" rx="1"/>
+              <rect x="3" y="14" width="7" height="7" rx="1"/>
+              <path d="M17.5 14v3m0 3v.5M14 17.5h3m3 0h.5"/>
+            </svg>
+          </div>
+          <h3 class="subpage-feature__title">Kombination mit Analyse</h3>
+          <p class="subpage-feature__text">Das Vital-Coaching lässt sich optimal mit einer Vitalstoff-Analyse verbinden — für ein vollständiges Bild und noch gezieltere Empfehlungen.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: Ablauf -->
+  <section class="subpage-section">
+    <div class="subpage-section__inner">
+      <div class="section-tag anim-fade">So läuft es ab</div>
+      <h2 class="subpage-section__heading anim-fade">Ihr Weg im Vital-Coaching</h2>
+      <div class="subpage-process">
+
+        <div class="subpage-process-step anim-fade">
+          <div class="subpage-process-step__number" aria-hidden="true">1</div>
+          <h3 class="subpage-process-step__title">Erstgespräch</h3>
+          <p class="subpage-process-step__text">In einem offenen Gespräch lernen wir Ihre Situation, Ihre Ziele und Ihren Alltag kennen. Eine gute Begleitung beginnt mit echtem Zuhören.</p>
+        </div>
+
+        <div class="subpage-process-step anim-fade">
+          <div class="subpage-process-step__number" aria-hidden="true">2</div>
+          <h3 class="subpage-process-step__title">Individueller Plan</h3>
+          <p class="subpage-process-step__text">Auf Basis Ihrer Angaben — und optionaler Analyse-Ergebnisse — wird ein auf Sie zugeschnittener Ernährungs- und Vitalstoff-Plan erarbeitet.</p>
+        </div>
+
+        <div class="subpage-process-step anim-fade">
+          <div class="subpage-process-step__number" aria-hidden="true">3</div>
+          <h3 class="subpage-process-step__title">Begleitung &amp; Anpassung</h3>
+          <p class="subpage-process-step__text">In regelmässigen Folge-Gesprächen wird der Plan überprüft und bei Bedarf angepasst — damit Ihr Wohlbefinden kontinuierlich gestärkt wird.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="subpage-cta">
+    <div class="subpage-cta__inner">
+      <h2 class="subpage-cta__title anim-fade">Ihr Vital-Coaching starten</h2>
+      <p class="subpage-cta__text anim-fade">Nehmen Sie jetzt Kontakt auf und erfahren Sie, wie das Vital-Coaching Ihr persönliches Wohlbefinden nachhaltig unterstützen kann.</p>
+      <a href="../index.html#kontakt" class="btn btn--primary anim-fade">Termin anfragen</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__logo">
+            <span class="footer__logo-top">Jensen</span>
+            <span class="footer__logo-bottom">Healing Concept</span>
+          </a>
+          <p class="footer__tagline">Ihr Raum für Regeneration und Wohlbefinden im Berner Oberland.</p>
+        </div>
+        <div class="footer__links">
+          <div class="footer__col">
+            <h4>Angebot</h4>
+            <a href="../index.html#rotlicht">Rotlicht-Wellness</a>
+            <a href="../index.html#vns">VNS-Wellness</a>
+            <a href="../index.html#angebot">Alle Angebote</a>
+          </div>
+          <div class="footer__col">
+            <h4>Studio</h4>
+            <a href="../index.html#philosophie">Philosophie</a>
+            <a href="../index.html#kontakt">Kontakt</a>
+            <a href="../index.html#kontakt">Termin buchen</a>
+          </div>
+          <div class="footer__col">
+            <h4>Kontakt</h4>
+            <a href="tel:+41763095069">076 309 50 69</a>
+            <a href="mailto:jensenhealingconcept@gmail.com">E-Mail senden</a>
+            <span>Reichenbach i. K.</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__disclaimer">Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung oder Behandlung. Es werden keine medizinischen Diagnosen gestellt und keine Heilversprechen abgegeben.</p>
+        <div class="footer__legal">
+          <span>&copy; 2026 Jensen Healing Concept GmbH</span>
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    // Scroll-animation for .anim-fade elements
+    (function () {
+      var elements = document.querySelectorAll('.anim-fade');
+      if (!elements.length) return;
+
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      elements.forEach(function (el) {
+        observer.observe(el);
+      });
+
+      // Hero elements visible immediately on load
+      document.querySelectorAll('.subpage-hero .anim-fade').forEach(function (el, i) {
+        setTimeout(function () {
+          el.classList.add('is-visible');
+        }, i * 120);
+      });
+    })();
+  </script>
+</body>
+</html>
