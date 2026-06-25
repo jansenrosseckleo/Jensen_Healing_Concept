@@ -3,13 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jensen Healing Concept — Wellness Studio Reichenbach im Kandertal</title>
-  <meta name="description" content="Modernste Wellness-Anwendungen für Körper und Geist. Rotlicht-Wellness, VNS-Wellness und ganzheitliches Wohlbefinden im Berner Oberland.">
+  <title>jensen healing concept — Wellness & Gesundheitsberatung Reichenbach im Kandertal</title>
+  <meta name="description" content="Ganzheitliche Wellness-Anwendungen, Gesundheitsberatung und hochwertige Produkte. Rotlicht-Wellness, iLifeSOMM, Frequenztherapie und mehr im Berner Oberland.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="password.js"></script>
 </head>
 <body>
 
@@ -17,17 +16,19 @@
   <nav class="nav" id="nav">
     <div class="nav__inner">
       <a href="#hero" class="nav__logo">
-        <span class="nav__logo-top">Jensen</span>
-        <span class="nav__logo-bottom">Healing Concept</span>
+        <span class="nav__logo-top">jensen</span>
+        <span class="nav__logo-bottom">healing concept</span>
       </a>
       <div class="nav__links" id="navLinks">
-        <a href="#rotlicht" class="nav__link">Rotlicht</a>
-        <a href="#vns" class="nav__link">VNS</a>
-        <a href="#philosophie" class="nav__link">Philosophie</a>
-        <a href="#angebot" class="nav__link">Angebot</a>
+        <a href="#angebot" class="nav__link">Angebote</a>
+        <a href="#produkte" class="nav__link">Produkte</a>
+        <a href="#ueber-mich" class="nav__link">Über mich</a>
         <a href="#kontakt" class="nav__link">Kontakt</a>
       </div>
-      <a href="#kontakt" class="nav__cta">Termin anfragen</a>
+      <div class="nav__right">
+        <a href="en/index.html" class="nav__lang" title="English">EN</a>
+        <a href="#kontakt" class="nav__cta">Termin anfragen</a>
+      </div>
       <button class="nav__toggle" id="navToggle" aria-label="Menü öffnen">
         <span></span>
         <span></span>
@@ -39,11 +40,13 @@
   <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu__inner">
-      <a href="#rotlicht" class="mobile-menu__link">Rotlicht</a>
-      <a href="#vns" class="mobile-menu__link">VNS</a>
-      <a href="#philosophie" class="mobile-menu__link">Philosophie</a>
-      <a href="#angebot" class="mobile-menu__link">Angebot</a>
+      <a href="#angebot" class="mobile-menu__link">Angebote</a>
+      <a href="#produkte" class="mobile-menu__link">Produkte</a>
+      <a href="#ueber-mich" class="mobile-menu__link">Über mich</a>
       <a href="#kontakt" class="mobile-menu__link">Kontakt</a>
+      <div class="mobile-menu__lang">
+        <a href="en/index.html">English</a>
+      </div>
       <a href="#kontakt" class="btn btn--primary mobile-menu__cta">Termin anfragen</a>
     </div>
   </div>
@@ -60,393 +63,199 @@
       <div class="hero__content">
         <div class="hero__tag reveal">
           <span class="hero__tag-line"></span>
-          Wellness Studio — Reichenbach im Kandertal
+          Diplomierte Pflegefachfrau — Reichenbach im Kandertal
         </div>
         <h1 class="hero__title">
-          <span class="reveal reveal--d1">Regeneration.</span>
+          <span class="reveal reveal--d1">Gesundheit.</span>
           <span class="reveal reveal--d2">Wohlbefinden.</span>
           <span class="reveal reveal--d3">Vitalität.</span>
         </h1>
         <p class="hero__subtitle reveal reveal--d4">
-          Entdecken Sie modernste Wellness-Anwendungen für Körper und Geist — in Ihrem persönlichen Rückzugsort im Berner Oberland.
+          Ganzheitliche Wellness-Anwendungen, Gesundheitsberatung und hochwertige Produkte — in Ihrem persönlichen Rückzugsort im Berner Oberland.
         </p>
         <div class="hero__actions reveal reveal--d5">
-          <a href="#angebot" class="btn btn--primary">Angebot entdecken</a>
+          <a href="#angebot" class="btn btn--primary">Angebote entdecken</a>
           <a href="#kontakt" class="btn btn--outline">Termin anfragen</a>
         </div>
       </div>
       <div class="hero__image-stack reveal reveal--d3">
         <div class="hero__image-main">
-          <img src="images/praxisraum-holz-wohnzimmer.jpg" alt="Wellness-Studio Jensen Healing Concept — gemütlicher Praxisraum" loading="eager">
+          <img src="images/old-site/hero-bg.jpg" alt="Wellness-Studio jensen healing concept" loading="eager">
         </div>
         <div class="hero__image-accent">
-          <img src="images/gefrorene-blume-eiskristalle.jpg" alt="Natur und Regeneration" loading="eager">
+          <img src="images/old-site/ueber-mich-nature.jpg" alt="Natur und Regeneration" loading="eager">
         </div>
-      </div>
-    </div>
-    <div class="hero__scroll">
-      <span>Entdecken</span>
-      <div class="hero__scroll-line"></div>
-    </div>
-  </section>
-
-  <!-- STATEMENT -->
-  <section class="statement">
-    <div class="statement__inner">
-      <p class="statement__text anim-fade">
-        Wo moderne Wellness-Technologie auf <em>ganzheitliches Wohlbefinden</em> trifft
-      </p>
-    </div>
-  </section>
-
-  <!-- ROTLICHT -->
-  <section id="rotlicht" class="rotlicht">
-    <canvas class="rotlicht__waves" id="rotlichtCanvas"></canvas>
-    <div class="rotlicht__grain"></div>
-
-    <div class="rotlicht__inner">
-      <div class="rotlicht__header">
-        <span class="section-tag anim-fade">01 — Schwerpunkt</span>
-        <h2 class="rotlicht__title anim-fade">
-          Rotlicht-<br><span class="text-accent">Wellness</span>
-        </h2>
-        <p class="rotlicht__lead anim-fade">
-          Die Kraft des Lichts für Ihr Wohlbefinden. Unsere Rotlicht-Anwendungen nutzen sanftes, wohltuendes Licht im roten und nahinfraroten Spektrum — eine seit Jahrzehnten geschätzte Methode in der Wellness-Welt.
-        </p>
-      </div>
-
-      <div class="rotlicht__features">
-        <div class="feature-card anim-fade">
-          <div class="feature-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="6" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M16 4V8M16 24V28M4 16H8M24 16H28M7.5 7.5L10.3 10.3M21.7 21.7L24.5 24.5M24.5 7.5L21.7 10.3M10.3 21.7L7.5 24.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="feature-card__title">Tiefe Entspannung</h3>
-          <p class="feature-card__text">Geniessen Sie wohltuende Wärme, die Körper und Geist zur Ruhe kommen lässt.</p>
-        </div>
-        <div class="feature-card anim-fade">
-          <div class="feature-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 28C22.627 28 28 22.627 28 16C28 9.373 22.627 4 16 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M16 22C19.314 22 22 19.314 22 16C22 12.686 19.314 10 16 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <circle cx="16" cy="16" r="2" fill="currentColor"/>
-            </svg>
-          </div>
-          <h3 class="feature-card__title">Natürliche Regeneration</h3>
-          <p class="feature-card__text">Unterstützen Sie die natürlichen Regenerationsprozesse Ihres Körpers auf sanfte Weise.</p>
-        </div>
-        <div class="feature-card anim-fade">
-          <div class="feature-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M16 4C16 4 6 12 6 18C6 23.523 10.477 28 16 28C21.523 28 26 23.523 26 18C26 12 16 4 16 4Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              <path d="M16 22V14M13 19L16 22L19 19" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="feature-card__title">Wohltuende Wärme</h3>
-          <p class="feature-card__text">Angenehme Tiefenwärme für ein Gefühl von Geborgenheit und innerem Gleichgewicht.</p>
-        </div>
-        <div class="feature-card anim-fade">
-          <div class="feature-card__icon">
-            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 4L16 8L20 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 8V16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M8 16C8 16 4 20 4 23C4 26 6.5 28 10 28C12.5 28 14.5 27 16 25.5C17.5 27 19.5 28 22 28C25.5 28 28 26 28 23C28 20 24 16 24 16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="feature-card__title">Ganzheitliches Erlebnis</h3>
-          <p class="feature-card__text">Eine Auszeit für alle Sinne in einer ruhigen, achtsam gestalteten Atmosphäre.</p>
-        </div>
-      </div>
-
-      <div class="rotlicht__process anim-fade">
-        <h3 class="rotlicht__process-title">Ihr Rotlicht-Erlebnis</h3>
-        <div class="process-steps">
-          <div class="process-step">
-            <span class="process-step__number">01</span>
-            <div class="process-step__content">
-              <h4>Persönliche Beratung</h4>
-              <p>Wir nehmen uns Zeit, Ihre individuellen Wünsche und Bedürfnisse kennenzulernen.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="process-step__number">02</span>
-            <div class="process-step__content">
-              <h4>Individuelle Anwendung</h4>
-              <p>Massgeschneiderte Rotlicht-Anwendung in wohltuender, entspannter Atmosphäre.</p>
-            </div>
-          </div>
-          <div class="process-step">
-            <span class="process-step__number">03</span>
-            <div class="process-step__content">
-              <h4>Nachbesprechung</h4>
-              <p>Gemeinsame Reflexion und persönliche Empfehlungen für Ihr weiteres Wohlbefinden.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="rotlicht__visual anim-fade">
-        <div class="rotlicht__image">
-          <img src="images/blaue-bokeh-dunkelfeldmikroskopie.jpg" alt="Mikroskopische Wellness-Analyse" loading="lazy">
-          <div class="rotlicht__image-overlay"></div>
-        </div>
-      </div>
-
-      <div class="rotlicht__cta anim-fade">
-        <a href="#kontakt" class="btn btn--glow">Termin anfragen</a>
-        <a href="angebot/rotlicht-wellness.html" class="btn btn--outline">Mehr erfahren</a>
       </div>
     </div>
   </section>
 
-  <!-- VNS -->
-  <section id="vns" class="vns">
-    <div class="vns__inner">
-      <div class="vns__header">
-        <span class="section-tag anim-fade">02 — Schwerpunkt</span>
-        <h2 class="vns__title anim-fade">
-          VNS-<br><span class="text-accent-warm">Wellness</span>
-        </h2>
-        <p class="vns__lead anim-fade">
-          Vagusnerv-Stimulation für tiefe Entspannung. Eine sanfte Wellness-Anwendung, die auf die Aktivierung des Vagusnervs abzielt — einem der wichtigsten Elemente unseres Nervensystems für Ruhe und Regeneration.
-        </p>
+  <!-- ANGEBOTE (kompakte Übersicht) -->
+  <section id="angebot" class="angebot">
+    <div class="angebot__inner">
+      <div class="angebot__header">
+        <span class="section-tag anim-fade">Leistungen</span>
+        <h2 class="angebot__title anim-fade">Meine Angebote</h2>
+        <p class="angebot__lead anim-fade">Von Rotlicht-Wellness über Frequenztherapie bis zur Dunkelfeldmikroskopie.</p>
       </div>
 
-      <div class="vns__image-banner anim-fade">
-        <img src="images/herzfrequenz-pulswelle-muster.jpg" alt="Pulswelle — Vagusnerv-Stimulation für tiefe Entspannung" loading="lazy">
-        <div class="vns__image-overlay"></div>
-      </div>
+      <div class="angebot__grid">
+        <a href="angebot/rotlicht-wellness.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M18 4V9M18 27V32M4 18H9M27 18H32M8 8L11.5 11.5M24.5 24.5L28 28M28 8L24.5 11.5M11.5 24.5L8 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Rotlicht-Wellness</h3>
+          <p class="service-card__text">Wohltuendes Licht im roten und nahinfraroten Spektrum für Entspannung und Regeneration.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
 
-      <div class="vns__grid">
-        <div class="vns__info anim-fade">
-          <h3>Was ist der Vagusnerv?</h3>
-          <p>
-            Der Vagusnerv ist der längste Hirnnerv und verbindet das Gehirn mit wichtigen Organen unseres Körpers. Er spielt eine zentrale Rolle für unser inneres Gleichgewicht und unsere Fähigkeit, in einen Zustand tiefer Entspannung zu gelangen.
-          </p>
-          <p>
-            Die sanfte Stimulation dieses Nervs ist eine moderne Wellness-Methode, die darauf abzielt, das natürliche Gleichgewicht des Nervensystems zu fördern und ein Gefühl von Ruhe und Ausgeglichenheit zu unterstützen.
-          </p>
-        </div>
+        <a href="https://partner.ilifesomm.com/jensenhealing" target="_blank" rel="noopener" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M4 26H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 26V18C6 16.895 6.895 16 8 16H28C29.105 16 30 16.895 30 18V26" stroke="currentColor" stroke-width="1.5"/><path d="M10 16V12C10 10.895 10.895 10 12 10H24C25.105 10 26 10.895 26 12V16" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="service-card__title">iLifeSOMM Liege</h3>
+          <p class="service-card__text">8 Komponenten für ganzheitliche Tiefenentspannung. Nur 12 Minuten täglich!</p>
+          <span class="service-card__link">Zur Partnerseite →</span>
+        </a>
 
-        <div class="vns__features">
-          <div class="vns-card anim-fade">
-            <div class="vns-card__icon">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 3C14 3 3 10 3 16.5C3 21.747 7.253 26 12.5 26H15.5C20.747 26 25 21.747 25 16.5C25 10 14 3 14 3Z" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M14 12V20M11 16H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Tiefe Entspannung</h4>
-              <p>Förderung eines tiefen Zustands von Ruhe und innerem Frieden.</p>
-            </div>
+        <a href="angebot/frequenztherapie.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M4 18H8L11 10L15 26L19 14L23 22L27 12L30 18H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <div class="vns-card anim-fade">
-            <div class="vns-card__icon">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="14" cy="14" r="10" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M4 14H24" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M14 4C16.5 6.5 18 10 18 14C18 18 16.5 21.5 14 24" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M14 4C11.5 6.5 10 10 10 14C10 18 11.5 21.5 14 24" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Natürliches Gleichgewicht</h4>
-              <p>Unterstützung der Balance zwischen Anspannung und Entspannung.</p>
-            </div>
-          </div>
-          <div class="vns-card anim-fade">
-            <div class="vns-card__icon">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 14H7L10 8L14 20L18 11L21 14H25" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Stressreduktion</h4>
-              <p>Sanfte Unterstützung bei der Reduzierung von alltäglichem Stress.</p>
-            </div>
-          </div>
-          <div class="vns-card anim-fade">
-            <div class="vns-card__icon">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M14 25C14 25 24 20 24 13V6L14 3L4 6V13C4 20 14 25 14 25Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-                <path d="M10 14L13 17L18 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </div>
-            <div>
-              <h4>Allgemeines Wohlbefinden</h4>
-              <p>Ein ganzheitlicher Beitrag zu Ihrem körperlichen und geistigen Wohlbefinden.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+          <h3 class="service-card__title">Frequenztherapie</h3>
+          <p class="service-card__text">Rife-Frequenzen bei Parasitenbefall und entzündlichen Symptomen. Ab 90 CHF.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
 
-      <div class="vns__cta anim-fade">
-        <a href="#kontakt" class="btn btn--primary">Termin anfragen</a>
-        <a href="angebot/vns-wellness.html" class="btn btn--outline">Mehr erfahren</a>
+        <a href="angebot/dunkelfeld.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="16" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M24 22L30 28" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Dunkelfeld-Mikroskopie</h3>
+          <p class="service-card__text">Kontrastreiche Analyse lebender Strukturen. 150 CHF inkl. Beratung.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="angebot/parasitentest.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><circle cx="18" cy="18" r="10" stroke="currentColor" stroke-width="1.5"/><path d="M14 14L22 22M22 14L14 22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Parasiten Test</h3>
+          <p class="service-card__text">Testung auf Bakterien, Viren, Pilze, Protozoen und Würmer. 250 CHF.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="angebot/nilas-messung.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="6" width="24" height="24" rx="4" stroke="currentColor" stroke-width="1.5"/><path d="M10 22L14 16L18 20L22 12L26 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Nilas MV Messung</h3>
+          <p class="service-card__text">HRV-Analyse des autonomen Nervensystems. Stress und Regulationsfähigkeit messen.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="angebot/kombi-paket.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="4" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="20" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M16 14H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Kombi: Nilas + iLifeSOMM</h3>
+          <p class="service-card__text">HRV-Messung kombiniert mit iLifeSOMM-Anwendung für optimale Ergebnisse.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="angebot/vitalstoff-analyse.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><rect x="6" y="8" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M12 16H24M12 20H20M12 24H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </div>
+          <h3 class="service-card__title">Vitalstoff-Analyse</h3>
+          <p class="service-card__text">240 Parameter für einen Einblick in Ihr Wohlbefinden und Ihre Vitalität.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="angebot/vital-coaching.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4C18 4 8 12 8 19C8 25.075 12.925 30 18 30C23.075 30 28 25.075 28 19C28 12 18 4 18 4Z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="service-card__title">Vital-Coaching</h3>
+          <p class="service-card__text">Individuelle Ernährungs- und Vitalstoffberatung mit hochwertigen Supplementen.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- PHILOSOPHIE -->
-  <section id="philosophie" class="philosophie">
+  <!-- PRODUKTE (kompakte Übersicht) -->
+  <section id="produkte" class="angebot" style="background-color: var(--cream-mid);">
+    <div class="angebot__inner">
+      <div class="angebot__header">
+        <span class="section-tag anim-fade">Empfehlungen</span>
+        <h2 class="angebot__title anim-fade">Produkte</h2>
+        <p class="angebot__lead anim-fade">Produkte, die ich seit Jahren selbst mit Erfolg anwende und weiterempfehle.</p>
+      </div>
+
+      <div class="angebot__grid">
+        <a href="https://partner.ilifesomm.com/jensenhealing" target="_blank" rel="noopener" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M4 26H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M6 26V18C6 16.895 6.895 16 8 16H28C29.105 16 30 16.895 30 18V26" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="service-card__title">iLifeSOMM</h3>
+          <p class="service-card__text">Die Wellness-Liege der nächsten Generation. Ich berate Sie gerne persönlich.</p>
+          <span class="service-card__link">Zur Partnerseite →</span>
+        </a>
+
+        <a href="produkte/kangen-k8.html" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M12 4H24V12C24 18.627 21.314 28 18 32C14.686 28 12 18.627 12 12V4Z" stroke="currentColor" stroke-width="1.5"/><path d="M12 8H24" stroke="currentColor" stroke-width="1" opacity="0.4"/></svg>
+          </div>
+          <h3 class="service-card__title">Kangen K8 Wasserionisierer</h3>
+          <p class="service-card__text">Ionisiertes, basisches Wasser von Enagic für Ihr tägliches Wohlbefinden.</p>
+          <span class="service-card__link">Mehr erfahren →</span>
+        </a>
+
+        <a href="https://www.platinumeurope.biz/plantwisdom/lifestyle/quality" target="_blank" rel="noopener" class="service-card service-card--clickable anim-fade">
+          <div class="service-card__icon">
+            <svg width="36" height="36" viewBox="0 0 36 36" fill="none"><path d="M18 4C18 4 8 12 8 19C8 25.075 12.925 30 18 30C23.075 30 28 25.075 28 19C28 12 18 4 18 4Z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 class="service-card__title">Platinum Health Europe</h3>
+          <p class="service-card__text">Reine Nahrung. Reine Lebenskraft. 203 Zutaten aus den kraftvollsten Pflanzen der Erde.</p>
+          <span class="service-card__link">Zur Platinum-Seite →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ÜBER MICH (kompakt) -->
+  <section id="ueber-mich" class="philosophie">
     <div class="philosophie__inner">
       <div class="philosophie__content">
-        <span class="section-tag anim-fade">Über uns</span>
-        <h2 class="philosophie__title anim-fade">Unsere<br>Philosophie</h2>
+        <span class="section-tag anim-fade">Über mich</span>
+        <h2 class="philosophie__title anim-fade">Sigrun<br>Jensen</h2>
         <div class="philosophie__text anim-fade">
+          <p><strong>Diplomierte Pflegefachfrau</strong> — anerkannt in der Schweiz</p>
           <p>
-            Bei Jensen Healing Concept verbinden wir modernste Wellness-Technologien mit einem tiefen Verständnis für ganzheitliches Wohlbefinden. Unser Ansatz basiert auf der Überzeugung, dass wahres Wohlbefinden entsteht, wenn Körper, Geist und Seele in Einklang kommen.
-          </p>
-          <p>
-            In unserem Studio in Reichenbach im Kandertal — eingebettet in die beeindruckende Natur des Berner Oberlands — bieten wir Ihnen einen persönlichen Rückzugsort. Hier steht Ihre individuelle Erfahrung im Mittelpunkt, begleitet von Sigrun Jensen mit langjähriger Erfahrung und echtem Engagement für Ihr Wohlbefinden.
+            18 Jahre Erfahrung in Intensivmedizin und Anästhesie, 2-jährige Heilpraktikerausbildung und eine tiefe Leidenschaft für ganzheitliche Gesundheit. Anregung und Unterstützung der Selbstheilungskräfte steht bei mir an erster Stelle.
           </p>
         </div>
         <div class="philosophie__values anim-fade">
           <div class="value">
-            <span class="value__number">01</span>
-            <span class="value__text">Individualität</span>
+            <span class="value__number">18+</span>
+            <span class="value__text">Jahre Pflege</span>
           </div>
           <div class="value">
-            <span class="value__number">02</span>
-            <span class="value__text">Ganzheitlichkeit</span>
+            <span class="value__number">HP</span>
+            <span class="value__text">Heilpraktikerin</span>
           </div>
           <div class="value">
-            <span class="value__number">03</span>
-            <span class="value__text">Achtsamkeit</span>
+            <span class="value__number">CH</span>
+            <span class="value__text">Anerkannt</span>
           </div>
         </div>
       </div>
       <div class="philosophie__visual anim-fade">
         <div class="philosophie__image">
           <div class="philosophie__image-inner">
-            <img src="images/sigrun-jensen-mikroskop-analyse.jpg" alt="Sigrun Jensen — Gründerin von Jensen Healing Concept" loading="lazy">
+            <img src="images/old-site/sigrun-mikroskop.jpg" alt="Sigrun Jensen am Mikroskop in ihrem Praxisraum" loading="lazy">
           </div>
         </div>
-        <div class="philosophie__image-secondary">
-          <img src="images/ginkgo-blatt-wassertropfen.jpg" alt="Ginkgo-Blatt — Symbol für Vitalität und Natur" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- QUOTE -->
-  <section class="quote-section">
-    <div class="quote-section__inner anim-fade">
-      <blockquote class="quote">
-        <p>«Jeder Mensch verdient einen Ort, an dem er zur Ruhe kommen und neue Kraft schöpfen kann.»</p>
-        <cite>— Sigrun Jensen</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- ANGEBOT -->
-  <section id="angebot" class="angebot">
-    <div class="angebot__inner">
-      <div class="angebot__header">
-        <span class="section-tag anim-fade">Leistungen</span>
-        <h2 class="angebot__title anim-fade">Unser Angebot</h2>
-        <p class="angebot__lead anim-fade">Neben unseren Schwerpunkten Rotlicht- und VNS-Wellness bieten wir ein breites Spektrum an Wellness-Anwendungen für Ihr ganzheitliches Wohlbefinden.</p>
-      </div>
-
-      <div class="angebot__grid">
-        <a href="angebot/rotlicht-wellness.html" class="service-card service-card--featured service-card--clickable anim-fade">
-          <div class="service-card__tag">Schwerpunkt</div>
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="7" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M18 4V9M18 27V32M4 18H9M27 18H32M8 8L11.5 11.5M24.5 24.5L28 28M28 8L24.5 11.5M11.5 24.5L8 28" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Rotlicht-Wellness</h3>
-          <p class="service-card__text">Wohltuende Lichtanwendungen im roten und nahinfraroten Spektrum für tiefe Entspannung und natürliche Regeneration.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/vns-wellness.html" class="service-card service-card--featured service-card--clickable anim-fade">
-          <div class="service-card__tag">Schwerpunkt</div>
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M4 18H8L12 10L18 26L24 14L28 18H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">VNS-Wellness</h3>
-          <p class="service-card__text">Sanfte Vagusnerv-Stimulation für tiefe Entspannung, innere Ruhe und die Förderung Ihres natürlichen Gleichgewichts.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/vitalstoff-analyse.html" class="service-card service-card--clickable anim-fade">
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="6" y="8" width="24" height="20" rx="2" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M12 16H24M12 20H20M12 24H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M14 4V8M22 4V8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Vitalstoff-Analyse</h3>
-          <p class="service-card__text">Umfassende Analyse mit Besprechung von 240 Parametern für einen detaillierten Einblick in Ihr Wohlbefinden und Ihre Vitalität.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/vital-coaching.html" class="service-card service-card--clickable anim-fade">
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M18 4C18 4 8 12 8 19C8 25.075 12.925 30 18 30C23.075 30 28 25.075 28 19C28 12 18 4 18 4Z" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M14 20C14 20 16 23 18 23C20 23 22 20 22 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Vital-Coaching</h3>
-          <p class="service-card__text">Individuelle Beratung zu Ernährung und Vitalität mit hochwertigen, bioverfügbaren Nahrungsergänzungen.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/reiki-meditation.html" class="service-card service-card--clickable anim-fade">
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="14" r="4" stroke="currentColor" stroke-width="1.5"/>
-              <path d="M10 30C10 24.477 13.582 20 18 20C22.418 20 26 24.477 26 30" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M18 4V6M26 8L24.5 9.5M10 8L11.5 9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Reiki &amp; Meditation</h3>
-          <p class="service-card__text">Traditionelle Entspannungsmethoden für innere Ruhe, Balance und ein gestärktes Wohlbefinden.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/biokybernetik.html" class="service-card service-card--clickable anim-fade">
-          <div class="service-card__icon">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="18" cy="18" r="12" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="18" cy="18" r="6" stroke="currentColor" stroke-width="1.5"/>
-              <circle cx="18" cy="18" r="1.5" fill="currentColor"/>
-              <path d="M18 6V12M18 24V30M6 18H12M24 18H30" stroke="currentColor" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Biokybernetik</h3>
-          <p class="service-card__text">Sanfte Impulse nach der Methode Smit zur Förderung des natürlichen Gleichgewichts und der inneren Harmonie.</p>
-          <span class="service-card__link">Mehr erfahren →</span>
-        </a>
-
-        <a href="angebot/ilifesomm.html" class="service-card service-card--wide service-card--clickable anim-fade">
-          <div class="service-card__image">
-            <img src="images/ilifesomm-wellness-liege.jpg" alt="iLifeSOMM Wellness-Liege im Studio" loading="lazy">
-          </div>
-          <div class="service-card__body">
-            <div class="service-card__icon">
-              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 26H32" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                <path d="M6 26V18C6 16.895 6.895 16 8 16H28C29.105 16 30 16.895 30 18V26" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M10 16V12C10 10.895 10.895 10 12 10H24C25.105 10 26 10.895 26 12V16" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="18" cy="20" r="2" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
-            </div>
-            <h3 class="service-card__title">iLifeSOMM Wellness-Liege</h3>
-            <p class="service-card__text">Modernste Wellnesstechnologie für ganzheitliche Sinneserfahrungen. Tiefenentspannung durch Klang, Vibration und Wärme auf der innovativen iLifeSOMM-Liege.</p>
-            <span class="service-card__link">Mehr erfahren →</span>
-          </div>
-        </a>
       </div>
     </div>
   </section>
@@ -456,16 +265,11 @@
     <div class="kontakt__inner">
       <div class="kontakt__info">
         <span class="section-tag anim-fade">Kontakt</span>
-        <h2 class="kontakt__title anim-fade">Wir freuen uns<br>auf Sie</h2>
-        <p class="kontakt__lead anim-fade">Vereinbaren Sie Ihren persönlichen Termin oder kontaktieren Sie uns für eine unverbindliche Beratung.</p>
-
+        <h2 class="kontakt__title anim-fade">Ich freue mich<br>auf Sie</h2>
         <div class="kontakt__details anim-fade">
           <div class="kontakt__detail">
             <div class="kontakt__detail-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M10 2C6.134 2 3 5.134 3 9C3 14.25 10 18 10 18C10 18 17 14.25 17 9C17 5.134 13.866 2 10 2Z" stroke="currentColor" stroke-width="1.5"/>
-                <circle cx="10" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6.134 2 3 5.134 3 9C3 14.25 10 18 10 18C10 18 17 14.25 17 9C17 5.134 13.866 2 10 2Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="9" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
             <div>
               <strong>Adresse</strong>
@@ -474,9 +278,7 @@
           </div>
           <div class="kontakt__detail">
             <div class="kontakt__detail-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3 5.5C3 13.5 6.5 17 14.5 17L16 14.5L13 13L11.5 14.5C9.5 14 6 10.5 5.5 8.5L7 7L5.5 4L3 5.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5.5C3 13.5 6.5 17 14.5 17L16 14.5L13 13L11.5 14.5C9.5 14 6 10.5 5.5 8.5L7 7L5.5 4L3 5.5Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </div>
             <div>
               <strong>Telefon</strong>
@@ -485,10 +287,7 @@
           </div>
           <div class="kontakt__detail">
             <div class="kontakt__detail-icon">
-              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/>
-                <path d="M2 6L10 12L18 6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
-              </svg>
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 6L10 12L18 6" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
             </div>
             <div>
               <strong>E-Mail</strong>
@@ -520,20 +319,25 @@
             <select id="service" name="service">
               <option value="">Bitte wählen...</option>
               <option value="rotlicht">Rotlicht-Wellness</option>
-              <option value="vns">VNS-Wellness</option>
+              <option value="ilifesomm">iLifeSOMM Liege</option>
+              <option value="frequenz">Frequenztherapie</option>
+              <option value="dunkelfeld">Dunkelfeld-Mikroskopie</option>
+              <option value="parasiten">Parasiten Test</option>
+              <option value="nilas">Nilas MV Messung</option>
+              <option value="kombi">Kombi-Paket (Nilas + iLife)</option>
               <option value="vitalstoff">Vitalstoff-Analyse</option>
               <option value="coaching">Vital-Coaching</option>
-              <option value="reiki">Reiki &amp; Meditation</option>
-              <option value="biokybernetik">Biokybernetik</option>
+              <option value="kangen">Kangen K8 Wasserfilter</option>
+              <option value="platinum">Platinum Supplements</option>
               <option value="beratung">Allgemeine Beratung</option>
             </select>
           </div>
           <div class="form-group">
             <label for="message">Nachricht</label>
-            <textarea id="message" name="message" rows="4" placeholder="Teilen Sie uns Ihre Wünsche oder Fragen mit..."></textarea>
+            <textarea id="message" name="message" rows="4" placeholder="Teilen Sie mir Ihre Wünsche oder Fragen mit..."></textarea>
           </div>
           <button type="submit" class="btn btn--primary btn--full">Anfrage senden</button>
-          <p class="form-note">* Pflichtfelder. Wir melden uns innerhalb von 24 Stunden bei Ihnen.</p>
+          <p class="form-note">* Pflichtfelder. Ich melde mich innerhalb von 24 Stunden.</p>
         </form>
       </div>
     </div>
@@ -545,23 +349,25 @@
       <div class="footer__top">
         <div class="footer__brand">
           <a href="#hero" class="footer__logo">
-            <span class="footer__logo-top">Jensen</span>
-            <span class="footer__logo-bottom">Healing Concept</span>
+            <span class="footer__logo-top">jensen</span>
+            <span class="footer__logo-bottom">healing concept</span>
           </a>
-          <p class="footer__tagline">Ihr Raum für Regeneration und Wohlbefinden im Berner Oberland.</p>
+          <p class="footer__tagline">Gesundheit und Wohlbefinden im Berner Oberland.</p>
         </div>
         <div class="footer__links">
           <div class="footer__col">
-            <h4>Angebot</h4>
+            <h4>Angebote</h4>
             <a href="angebot/rotlicht-wellness.html">Rotlicht-Wellness</a>
-            <a href="angebot/vns-wellness.html">VNS-Wellness</a>
-            <a href="#angebot">Alle Angebote</a>
+            <a href="https://partner.ilifesomm.com/jensenhealing" target="_blank">iLifeSOMM</a>
+            <a href="angebot/frequenztherapie.html">Frequenztherapie</a>
+            <a href="angebot/dunkelfeld.html">Dunkelfeld</a>
           </div>
           <div class="footer__col">
-            <h4>Studio</h4>
-            <a href="#philosophie">Philosophie</a>
+            <h4>Mehr</h4>
+            <a href="#ueber-mich">Über mich</a>
+            <a href="#produkte">Produkte</a>
             <a href="#kontakt">Kontakt</a>
-            <a href="#kontakt">Termin buchen</a>
+            <a href="en/index.html">English</a>
           </div>
           <div class="footer__col">
             <h4>Kontakt</h4>
@@ -573,10 +379,10 @@
       </div>
       <div class="footer__bottom">
         <p class="footer__disclaimer">
-          Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung oder Behandlung. Es werden keine medizinischen Diagnosen gestellt und keine Heilversprechen abgegeben.
+          Bei einigen der hier vorgestellten Methoden handelt es sich um Verfahren der Komplementärmedizin. Alle Anwendungen verstehen sich als Wellness-Dienstleistungen und ersetzen keine ärztliche Beratung oder Behandlung.
         </p>
         <div class="footer__legal">
-          <span>&copy; 2026 Jensen Healing Concept GmbH</span>
+          <span>&copy; 2026 jensen healing concept GmbH</span>
           <a href="#">Impressum</a>
           <a href="#">Datenschutz</a>
         </div>

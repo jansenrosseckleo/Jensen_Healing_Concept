@@ -227,11 +227,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const waveColors = [
-      'rgba(155, 35, 53, 0.35)',
-      'rgba(200, 60, 70, 0.2)',
-      'rgba(120, 20, 35, 0.3)',
-      'rgba(180, 80, 90, 0.18)',
-      'rgba(100, 15, 25, 0.25)'
+      'rgba(91, 134, 199, 0.35)',
+      'rgba(120, 160, 220, 0.2)',
+      'rgba(58, 95, 154, 0.3)',
+      'rgba(142, 175, 230, 0.18)',
+      'rgba(40, 70, 130, 0.25)'
     ];
 
     const section = rotlichtCanvas.closest('.rotlicht');
@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function drawWaves() {
       nt += 0.0007;
-      ctx.fillStyle = '#0C0505';
+      ctx.fillStyle = '#0A1628';
       ctx.globalAlpha = 0.3;
       ctx.fillRect(0, 0, wW, wH);
       ctx.globalAlpha = 1;
